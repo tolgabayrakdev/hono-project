@@ -20,7 +20,7 @@ authenticaton.post('/login', async (c): Promise<any> => {
 authenticaton.post('/register', async (c): Promise<any> => {
    const body = await c.req.json();
    const data = await authenticationService.register(body);
-   return c.text(data, 201);
+   return c.json({ message: data }, 201);
 });
 
 authenticaton.post('/logout', async (c) => {
