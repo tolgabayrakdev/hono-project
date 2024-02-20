@@ -4,14 +4,13 @@ import { logger } from 'hono/logger';
 import { cors } from 'hono/cors';
 
 //Routers
-import deneme from './api/deneme';
-import authentication from "./api/authentication";
-
+import deneme from './routes/deneme';
+import authentication from './routes/authentication';
 
 const app = new Hono();
 
 app.use(logger());
-app.use("*", cors({ origin: "*", credentials: true }))
+app.use('*', cors({ origin: '*', credentials: true }));
 
 app.route('/api/v1', deneme);
 app.route('/api/v1/authentication', authentication);

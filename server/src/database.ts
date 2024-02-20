@@ -1,4 +1,4 @@
-import pg, { Client } from 'pg';
+import { Client } from 'pg';
 
 const client = new Client({
    user: 'root',
